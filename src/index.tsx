@@ -1,14 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
+import { SWRConfig } from 'swr'
 import * as serviceWorker from './serviceWorker'
+import 'antd/dist/antd.css'
 
-import { App } from './App'
+import { App } from 'App'
+import { fetcher } from 'utils/fetcher'
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <SWRConfig value={{ fetcher }}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </SWRConfig>,
   document.getElementById('root')
 )
 

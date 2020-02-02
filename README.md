@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project creates simple blog using React.
 
 ## Available Scripts
 
@@ -34,9 +34,3 @@ Runs syntax validation according to configuration in .eslintrc.
 This will not fix any errors. 
 
 To fix autamically fixable errors, use `npm run eslint -- --fix`
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

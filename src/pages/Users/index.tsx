@@ -1,11 +1,10 @@
-import React, { FC, lazy } from 'react'
+import React, { FC } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
-import { WaitingComponent } from 'components/shared/WaitingComponent'
 import { PATHS } from 'config/paths'
 
-const List = lazy(() => import('pages/Users/UserList'))
-const Detail = lazy(() => import('pages/Users/Detail'))
+import { UserList } from 'pages/Users/UserList'
+import { Detail } from 'pages/Users/Detail'
 
 interface Address {
   street: string
@@ -39,8 +38,8 @@ export interface User {
 
 const Users: FC = () => (
   <Switch>
-    <Route path={PATHS.USERS} exact component={WaitingComponent(List)} />
-    <Route path={`${PATHS.USERS}/:id`} component={WaitingComponent(Detail)} />
+    <Route path={PATHS.USERS} exact component={UserList} />
+    <Route path={`${PATHS.USERS}/:id`} component={Detail} />
     <Redirect to={PATHS.USERS} />
   </Switch>
 )

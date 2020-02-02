@@ -6,7 +6,7 @@ import { PostCard } from 'pages/Posts/PostCard'
 import { List } from 'components/shared/List'
 import { ENDPOINTS } from 'config/endpoints'
 
-const PostList: FC = () => {
+export const PostList: FC = () => {
   const { t } = useTranslation()
 
   return (
@@ -20,5 +20,3 @@ const PostList: FC = () => {
     />
   )
 }
-
-export default PostList

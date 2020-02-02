@@ -9,7 +9,7 @@ import { PostCard } from 'pages/Posts/PostCard'
 import { Title } from 'components/shared/Typography'
 import { ENDPOINTS } from 'config/endpoints'
 
-const Detail: FC = () => {
+export const Detail: FC = () => {
   const { t } = useTranslation()
   const { id } = useParams()
   const [data] = useAsyncCall(`${ENDPOINTS.POSTS}/${id}`)
@@ -26,5 +26,3 @@ const Detail: FC = () => {
     </Fragment>
   )
 }
-
-export default Detail

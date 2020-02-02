@@ -6,7 +6,7 @@ import { User } from 'pages/Users'
 import { UserCard } from 'pages/Users/UserCard'
 import { ENDPOINTS } from 'config/endpoints'
 
-const UserList: FC = () => {
+export const UserList: FC = () => {
   const { t } = useTranslation()
 
   return (
@@ -20,5 +20,3 @@ const UserList: FC = () => {
     />
   )
 }
-
-export default UserList

@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import { WaitingComponent } from 'components/shared/WaitingComponent'
 
-const List = lazy(() => import('pages/Users/List'))
+const List = lazy(() => import('pages/Users/UserList'))
 const Detail = lazy(() => import('pages/Users/Detail'))
 
 interface Address {

@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import { stringify } from 'use-query-params'
 
-interface Params {
+export interface Params {
   page?: number
   filter?: string
 }

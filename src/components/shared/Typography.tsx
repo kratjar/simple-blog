@@ -10,7 +10,9 @@ interface TitleProps {
   marginTop?: boolean
 }
 
-export const Title = styled(AntTitle)<TitleProps & ThemeProps>`
+export const Title = styled(AntTitle, { shouldForwardProp: (prop: any) => prop !== 'marginTop' })<
+  TitleProps & ThemeProps
+>`
   ${({ marginTop, theme }) => marginTop && `margin-top: ${theme.spacing(5)}`}
 `
 

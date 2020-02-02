@@ -1,4 +1,5 @@
 import React, { FC, Fragment, ReactElement } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { Input } from 'components/shared/Input'
 import { Pagination } from 'components/shared/Pagination'
@@ -30,6 +31,7 @@ interface AsyncCallProps {
 type Props = AsyncCallProps & PageProps & (FilterProps | NoFilterProps)
 
 export const List: FC<Props> = ({ searchTitle, listTitle, component, endpoint, shouldUseFilter, shouldUsePage }) => {
+  const { t } = useTranslation()
   const { page, handlePageChange } = usePagination()
   const { filter, handleFilterChange } = useFilter()
 
@@ -50,7 +52,7 @@ export const List: FC<Props> = ({ searchTitle, listTitle, component, endpoint, s
       )}
 
       <Title level={3} marginTop>
-        {listTitle}
+        {data.length ? listTitle : t('no-data')}
       </Title>
 
       {data.map(component)}

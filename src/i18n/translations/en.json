@@ -10,6 +10,7 @@
         "see-detail": "See detail",
         "see-author-detail": "See author detail",
         "search": "Search",
-        "user-detail": "User detail"
+        "user-detail": "User detail",
+        "no-data": "No data found"
     }
 }

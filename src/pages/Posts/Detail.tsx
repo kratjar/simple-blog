@@ -18,7 +18,7 @@ const Detail: FC = () => {
       <Title level={3} marginTop>
         Post detail
       </Title>
-      <PostCard post={post} />
+      <PostCard post={post} linkToAuthor />
       <Comments postId={id!} />
     </Fragment>
   )

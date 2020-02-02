@@ -11,7 +11,7 @@ const PostList: FC = () => (
     endpoint="/posts"
     shouldUseFilter
     shouldUsePage
-    component={(post: Post) => <PostCard key={post.id} post={post} linkToDetail />}
+    component={(post: Post) => <PostCard key={post.id} post={post} linkToDetail linkToAuthor />}
   />
 )
 

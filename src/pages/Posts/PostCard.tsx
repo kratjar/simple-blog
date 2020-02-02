@@ -8,9 +8,10 @@ import { Post } from 'pages/Posts'
 interface Props {
   post: Post
   linkToDetail?: boolean
+  linkToAuthor?: boolean
 }
 
-export const PostCard: FC<Props> = ({ post, linkToDetail }) => {
+export const PostCard: FC<Props> = ({ post, linkToDetail, linkToAuthor }) => {
   const { id, title, body, userId } = post
 
   return (
@@ -26,9 +27,11 @@ export const PostCard: FC<Props> = ({ post, linkToDetail }) => {
         </div>
       )}
 
-      <Link to={`/users/${userId}`}>
-        <Text underline>See author detail</Text>
-      </Link>
+      {linkToAuthor && (
+        <Link to={`/users/${userId}`}>
+          <Text underline>See author detail</Text>
+        </Link>
+      )}
     </Card>
   )
 }

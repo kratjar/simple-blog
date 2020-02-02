@@ -12,14 +12,16 @@ interface Props {
 }
 
 export const UserCard: FC<Props> = ({ user, linkToDetail, extendedInfo }) => {
-  const { id, name, username, email } = user
+  const { id, name, username, email, address } = user
+
+  const { street, suite, zipcode, city } = address
 
   return (
     <Card>
       <Title level={4}>{name}</Title>
       <Paragraph>{username}</Paragraph>
 
-      <Paragraph>{email}</Paragraph>
+      <Paragraph type="secondary">{email}</Paragraph>
 
       {linkToDetail && (
         <Link to={`/users/${id}`}>
@@ -27,7 +29,14 @@ export const UserCard: FC<Props> = ({ user, linkToDetail, extendedInfo }) => {
         </Link>
       )}
 
-      {extendedInfo && <Fragment />}
+      {extendedInfo && (
+        <Fragment>
+          <Paragraph>
+            <div>{`${street} ${suite}`}</div>
+            <div>{`${zipcode} ${city}`}</div>
+          </Paragraph>
+        </Fragment>
+      )}
     </Card>
   )
 }

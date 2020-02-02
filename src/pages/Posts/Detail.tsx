@@ -7,11 +7,12 @@ import { useParams } from 'react-router-dom'
 import { useAsyncCall } from 'hooks/useAsyncCall'
 import { PostCard } from 'pages/Posts/PostCard'
 import { Title } from 'components/shared/Typography'
+import { ENDPOINTS } from 'config/endpoints'
 
 const Detail: FC = () => {
   const { t } = useTranslation()
   const { id } = useParams()
-  const [data] = useAsyncCall(`/posts/${id}`)
+  const [data] = useAsyncCall(`${ENDPOINTS.POSTS}/${id}`)
 
   const post = data as Post
 

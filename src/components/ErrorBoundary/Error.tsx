@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 
 import { Button } from 'components/shared/Button'
 import Paragraph from 'antd/es/typography/Paragraph'
+import { PATHS } from 'config/paths'
 
 interface Props {
   resetError: () => void
@@ -15,7 +16,7 @@ export const Error: FC<Props> = ({ resetError }) => {
 
   const redirect = () => {
     resetError()
-    history.replace('/')
+    history.replace(PATHS.HOME)
   }
 
   return (

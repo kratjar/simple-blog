@@ -5,6 +5,7 @@ import { Card } from 'components/shared/Card'
 import { Paragraph, Title, Text } from 'components/shared/Typography'
 import { Link } from 'components/shared/Link'
 import { User } from 'pages/Users'
+import { PATHS } from 'config/paths'
 
 interface Props {
   user: User
@@ -26,7 +27,7 @@ export const UserCard: FC<Props> = ({ user, linkToDetail, extendedInfo }) => {
       <Paragraph type="secondary">{email}</Paragraph>
 
       {linkToDetail && (
-        <Link to={`/users/${id}`}>
+        <Link to={`${PATHS.USERS}/${id}`}>
           <Text underline>{t('see-detail')}</Text>
         </Link>
       )}

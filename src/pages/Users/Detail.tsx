@@ -7,11 +7,12 @@ import { useAsyncCall } from 'hooks/useAsyncCall'
 import { UserCard } from 'pages/Users/UserCard'
 import { Posts } from 'pages/Users/Posts'
 import { Title } from 'components/shared/Typography'
+import { ENDPOINTS } from 'config/endpoints'
 
 const Detail: FC = () => {
   const { t } = useTranslation()
   const { id } = useParams()
-  const [data] = useAsyncCall(`/users/${id}`)
+  const [data] = useAsyncCall(`${ENDPOINTS.USERS}/${id}`)
 
   const user = data as User
 

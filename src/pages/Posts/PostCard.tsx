@@ -5,6 +5,7 @@ import { Card } from 'components/shared/Card'
 import { Paragraph, Title, Text } from 'components/shared/Typography'
 import { Link } from 'components/shared/Link'
 import { Post } from 'pages/Posts'
+import { PATHS } from 'config/paths'
 
 interface Props {
   post: Post
@@ -23,14 +24,14 @@ export const PostCard: FC<Props> = ({ post, linkToDetail, linkToAuthor }) => {
 
       {linkToDetail && (
         <div>
-          <Link to={`/posts/${id}`}>
+          <Link to={`${PATHS.POSTS}/${id}`}>
             <Text underline>{t('see-detail')}</Text>
           </Link>
         </div>
       )}
 
       {linkToAuthor && (
-        <Link to={`/users/${userId}`}>
+        <Link to={`${PATHS.USERS}/${userId}`}>
           <Text underline>{t('see-author-detail')}</Text>
         </Link>
       )}

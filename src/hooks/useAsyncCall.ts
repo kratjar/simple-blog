@@ -1,19 +1,21 @@
 import useSWR from 'swr'
 import { stringify } from 'use-query-params'
 
+import { HEADERS, PARAMS } from 'config/endpoints'
+
 export interface Params {
   page?: number
   filter?: string
 }
 
 const extractTotalFromHeaders = (headers: any): number => {
-  const { 'x-total-count': total } = headers
+  const { [HEADERS.TOTAL]: total } = headers
 
   return +total
 }
 
 const createSearch = ({ page, filter }: Params) => {
-  const search = stringify({ _page: page, q: filter })
+  const search = stringify({ [PARAMS.PAGE]: page, [PARAMS.FILTER]: filter })
 
   if (search === '') {
     return search

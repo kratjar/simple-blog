@@ -1,4 +1,5 @@
 import React, { FC, Fragment } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { Post } from 'pages/Posts'
 import { Comments } from 'pages/Posts/Comments'
@@ -8,6 +9,7 @@ import { PostCard } from 'pages/Posts/PostCard'
 import { Title } from 'components/shared/Typography'
 
 const Detail: FC = () => {
+  const { t } = useTranslation()
   const { id } = useParams()
   const [data] = useAsyncCall(`/posts/${id}`)
 
@@ -16,7 +18,7 @@ const Detail: FC = () => {
   return (
     <Fragment>
       <Title level={3} marginTop>
-        Post detail
+        {t('post-detail')}
       </Title>
       <PostCard post={post} linkToAuthor />
       <Comments postId={id!} />

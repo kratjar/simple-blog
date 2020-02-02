@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { Card } from 'components/shared/Card'
 import { Paragraph, Title, Text } from 'components/shared/Typography'
@@ -12,6 +13,7 @@ interface Props {
 }
 
 export const PostCard: FC<Props> = ({ post, linkToDetail, linkToAuthor }) => {
+  const { t } = useTranslation()
   const { id, title, body, userId } = post
 
   return (
@@ -22,14 +24,14 @@ export const PostCard: FC<Props> = ({ post, linkToDetail, linkToAuthor }) => {
       {linkToDetail && (
         <div>
           <Link to={`/posts/${id}`}>
-            <Text underline>See detail</Text>
+            <Text underline>{t('see-detail')}</Text>
           </Link>
         </div>
       )}
 
       {linkToAuthor && (
         <Link to={`/users/${userId}`}>
-          <Text underline>See author detail</Text>
+          <Text underline>{t('see-author-detail')}</Text>
         </Link>
       )}
     </Card>

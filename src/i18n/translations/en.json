@@ -1,0 +1,15 @@
+{
+    "common": {
+        "back-to-homepage": "Back to homepage",
+        "error-boundary-description": "Something happened. You can go back to homepage and try again. In the case of repeated failure please inform us via email. Thank you for understanding.",
+        "app-name": "Simple blog",
+        "posts": "Posts",
+        "users": "Users",
+        "comments": "Comments",
+        "post-detail": "Post detail",
+        "see-detail": "See detail",
+        "see-author-detail": "See author detail",
+        "search": "Search",
+        "user-detail": "User detail"
+    }
+}

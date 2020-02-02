@@ -1,4 +1,5 @@
 import React, { FC, Fragment } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { Card } from 'components/shared/Card'
 import { Paragraph, Title, Text } from 'components/shared/Typography'
@@ -12,6 +13,7 @@ interface Props {
 }
 
 export const UserCard: FC<Props> = ({ user, linkToDetail, extendedInfo }) => {
+  const { t } = useTranslation()
   const { id, name, username, email, address } = user
 
   const { street, suite, zipcode, city } = address
@@ -25,7 +27,7 @@ export const UserCard: FC<Props> = ({ user, linkToDetail, extendedInfo }) => {
 
       {linkToDetail && (
         <Link to={`/users/${id}`}>
-          <Text underline>See detail</Text>
+          <Text underline>{t('see-detail')}</Text>
         </Link>
       )}
 

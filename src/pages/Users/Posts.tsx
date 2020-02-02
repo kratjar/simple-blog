@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { List } from 'components/shared/List'
 import { Post } from 'pages/Posts'
@@ -8,10 +9,14 @@ interface Props {
   userId: string
 }
 
-export const Posts: FC<Props> = ({ userId }) => (
-  <List
-    listTitle="Posts"
-    endpoint={`/posts?userId=${userId}`}
-    component={(post: Post) => <PostCard key={post.id} post={post} linkToDetail />}
-  />
-)
+export const Posts: FC<Props> = ({ userId }) => {
+  const { t } = useTranslation()
+
+  return (
+    <List
+      listTitle={t('posts')}
+      endpoint={`/posts?userId=${userId}`}
+      component={(post: Post) => <PostCard key={post.id} post={post} linkToDetail />}
+    />
+  )
+}

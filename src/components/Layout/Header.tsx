@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 import { Link } from 'components/shared/Link'
 import { ThemeProps } from 'theme'
@@ -60,14 +61,18 @@ const NavRight = styled.div<ThemeProps>`
   }
 `
 
-export const Header: FC = () => (
-  <Nav>
-    <NavHeader>
-      <NavLeft>Simple Blog</NavLeft>
-      <NavRight>
-        <Link to="/posts">Posts</Link>
-        <Link to="/users">Users</Link>
-      </NavRight>
-    </NavHeader>
-  </Nav>
-)
+export const Header: FC = () => {
+  const { t } = useTranslation()
+
+  return (
+    <Nav>
+      <NavHeader>
+        <NavLeft>{t('app-name')}</NavLeft>
+        <NavRight>
+          <Link to="/posts">{t('posts')}</Link>
+          <Link to="/users">{t('users')}</Link>
+        </NavRight>
+      </NavHeader>
+    </Nav>
+  )
+}

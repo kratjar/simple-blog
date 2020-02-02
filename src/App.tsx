@@ -4,6 +4,7 @@ import { Route, Redirect, Switch } from 'react-router-dom'
 import { ErrorBoundary } from 'components/ErrorBoundary'
 import { Layout } from 'components/Layout'
 import { WaitingComponent } from 'components/shared/WaitingComponent'
+import 'i18n'
 
 const Posts = lazy(() => import('pages/Posts'))
 const Users = lazy(() => import('pages/Users'))

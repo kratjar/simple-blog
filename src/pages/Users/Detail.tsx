@@ -1,4 +1,5 @@
 import React, { FC, Fragment } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { User } from 'pages/Users'
 import { useParams } from 'react-router-dom'
@@ -8,6 +9,7 @@ import { Posts } from 'pages/Users/Posts'
 import { Title } from 'components/shared/Typography'
 
 const Detail: FC = () => {
+  const { t } = useTranslation()
   const { id } = useParams()
   const [data] = useAsyncCall(`/users/${id}`)
 
@@ -16,7 +18,7 @@ const Detail: FC = () => {
   return (
     <Fragment>
       <Title level={3} marginTop>
-        User detail
+        {t('user-detail')}
       </Title>
       <UserCard user={user} extendedInfo />
       <Posts userId={user.id} />

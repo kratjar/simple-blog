@@ -6,29 +6,24 @@ import { Pagination } from 'components/shared/Pagination'
 import { useAsyncCall } from 'hooks/useAsyncCall'
 import { usePagination } from 'hooks/usePagination'
 import { useFilter } from 'hooks/useFilter'
+import { User } from 'pages/Users'
 
-interface Post {
-  userId: number
-  id: number
-  title: string
-  body: string
-}
-
-const Home: FC = () => {
+const List: FC = () => {
   const { page, handlePageChange } = usePagination()
   const { filter, handleFilterChange } = useFilter()
 
-  const [data, total] = useAsyncCall('/posts', { page, filter })
+  const [data, total] = useAsyncCall('/users', { page, filter })
 
-  const posts: Post[] = data
+  const users: User[] = data
 
   return (
     <Fragment>
       <Input defaultValue={filter} onPressEnter={handleFilterChange} />
-      {posts.map(({ title, body }) => (
+      {users.map(({ name, username, email }) => (
         <Card>
-          <div>{title}</div>
-          <div>{body}</div>
+          <div>{name}</div>
+          <div>{username}</div>
+          <div>{email}</div>
         </Card>
       ))}
       <Pagination total={total} current={page} onChange={handlePageChange} hideOnSinglePage />
@@ -36,4 +31,4 @@ const Home: FC = () => {
   )
 }
 
-export default Home
+export default List

@@ -14,5 +14,5 @@ export const PARAMS = {
   PAGE: '_page',
   FILTER: 'q',
   USER_ID: 'userId',
-  POST_ID: 'post_id',
+  POST_ID: 'postId',
 }

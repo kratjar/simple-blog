@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { QueryParamProvider } from 'use-query-params'
+import { ThemeProvider } from 'emotion-theming'
 
 import { SWRConfig } from 'swr'
 import * as serviceWorker from './serviceWorker'
@@ -9,12 +10,15 @@ import 'antd/dist/antd.css'
 
 import { App } from 'App'
 import { fetcher } from 'utils/fetcher'
+import { theme } from 'theme'
 
 ReactDOM.render(
   <SWRConfig value={{ fetcher }}>
     <BrowserRouter>
       <QueryParamProvider ReactRouterRoute={Route}>
-        <App />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </QueryParamProvider>
     </BrowserRouter>
   </SWRConfig>,

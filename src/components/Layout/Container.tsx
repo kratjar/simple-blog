@@ -1,6 +1,13 @@
-import { FC } from 'react'
 import styled from '@emotion/styled'
 
-export const Container: FC = styled.div`
-  padding: 12px;
+import { ThemeProps } from 'theme'
+
+export const Container = styled.div<ThemeProps>`
+  max-width: ${({ theme }) => theme.breakpoints.lg};
+  padding: ${({ theme }) => `${theme.spacing(7)} ${theme.spacing(7)}`};
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
 `

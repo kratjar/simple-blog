@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
+import { PATHS } from 'config/paths'
 
 import { Link } from 'components/shared/Link'
 import { ThemeProps } from 'theme'
@@ -69,8 +70,8 @@ export const Header: FC = () => {
       <NavHeader>
         <NavLeft>{t('app-name')}</NavLeft>
         <NavRight>
-          <Link to="/posts">{t('posts')}</Link>
-          <Link to="/users">{t('users')}</Link>
+          <Link to={PATHS.POSTS}>{t('posts')}</Link>
+          <Link to={PATHS.USERS}>{t('users')}</Link>
         </NavRight>
       </NavHeader>
     </Nav>
